@@ -1,4 +1,4 @@
-package dto;
+package prj.dto;
 
 public class DreamTreeInfo {
 	private String name;
