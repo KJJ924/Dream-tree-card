@@ -1,7 +1,8 @@
 package prj;
 
 import prj.action.DefaultAction;
-import prj.action.SelectPoint;
+import prj.action.Search;
+
 import prj.action.SelectRegionAction;
 import prj.action.SelectThemeAction;
 
@@ -22,8 +23,8 @@ public class CommandFactory {
 		IAction action =null;
 		
 		switch (command) {
-		case "SelectPoint":
-			action = new SelectPoint();
+		case "Search":
+			action = new Search();
 			break;
 		case "SelectRegion":
 			action = new SelectRegionAction();

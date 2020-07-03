@@ -11,29 +11,28 @@ import prj.ActionForward;
 import prj.IAction;
 import prj.dao.DreamTreeDAO;
 
-public class SelectRegionAction implements IAction {
+public class Search implements IAction {
 
 	@Override
 	public ActionForward execute(HttpServletResponse response, HttpServletRequest request) throws Exception {
-			
-		String region =request.getParameter("region");
-		String result= null;
+		
+		String result=null;
+		String title =request.getParameter("title");
+		System.out.println(title);
 		DreamTreeDAO dao = new DreamTreeDAO();
 		
-		List<String> list_ID =dao.selectRegion(region);
-		
-		
+		List<String>list_id = dao.search(title);
 		
 		Gson gson = new Gson();
 		
-		result =gson.toJson(list_ID);
-		System.out.println("json(처리전):"+list_ID);
-		System.out.println("json(처리후):"+result);
+		result = gson.toJson(list_id);
 		
-		ActionForward forward = new ActionForward();
+		ActionForward forward =new ActionForward();
+		
 		request.setAttribute("output", result);
 		forward.setPath("/WEB-INF/view/json.jsp");
-				
+		
+	
 		return forward;
 	}
 
