@@ -15,6 +15,12 @@
 5) 가맹점 기본정보 확인(주소,전화번호,이름,음식점종류,데이터갱신일)
 6) 가맹점 위치 로드뷰 
 
+### 홈페이지
+![image](https://user-images.githubusercontent.com/64793712/86597566-e0952a00-bfd6-11ea-9127-6cae4e94a4e2.png)
+![image](https://user-images.githubusercontent.com/64793712/86597698-091d2400-bfd7-11ea-924a-0decd8fb19d2.png)
+![image](https://user-images.githubusercontent.com/64793712/86597777-29e57980-bfd7-11ea-8a6b-8b7c7c3077dd.png)
+![image](https://user-images.githubusercontent.com/64793712/86597871-4aadcf00-bfd7-11ea-99eb-5959104fe7b4.png)
+
 ### 사용 DB: postgresql
 지리정보를 위해 사용
 
@@ -41,6 +47,10 @@ geoserver, openlayers3, Kakao 로드뷰 API
 
 ### 테이블설계
 ![image](https://user-images.githubusercontent.com/64793712/86595411-a70eef80-bfd3-11ea-969a-84f24435f112.png)
+
+
+### 포인트별 심볼설정
+geoserver SLD 이용 tbl_coor 에  있는 테마별 분류 해당 테마에 맞는 심볼 이미지 추가. 
 
 
 
