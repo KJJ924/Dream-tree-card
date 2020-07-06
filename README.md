@@ -7,6 +7,13 @@
 4) 편의점에 집중된 식단개선을 위해 웹페이지 제작
 
 
+### 기능
+1) 구별 가맹점 확인
+2) 음식별 가맹점 확인
+3) 검색기능
+4) 내위치 확인
+5) 가맹점 기본정보 확인(주소,전화번호,이름,음식점종류,데이터갱신일)
+6) 가맹점 위치 로드뷰 
 
 ### 사용 DB: postgresql
 지리정보를 위해 사용
@@ -18,13 +25,14 @@
 
 
 ### 사용 data : 공공데이터포털 가입된 가맹점 정보
-(편의점 제외 총 1857개)csv파일 ->   Qgis이용 shp파일 생성 -> postgresql import
+(편의점 제외 총 1857개)csv파일 ->   Qgis이용 (포인트 기본 좌표설정) shp파일 생성 -> postgresql import
+->geoserver 와 postgresql 연동
 
 
 
 
 ### 사용한 open api
-geoserver, openlayers3
+geoserver, openlayers3, Kakao 로드뷰 API
 
 
 
