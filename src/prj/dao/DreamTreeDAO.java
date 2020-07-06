@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import prj.datasource.DBConnection;
+import prj.dto.DreamTreeInfo;
 
 public class DreamTreeDAO {
  private Connection conn;
@@ -84,5 +85,30 @@ public class DreamTreeDAO {
 		
 		
 		return list_serachId;
+	}
+
+	public DreamTreeInfo selectPoint(int select_id) throws SQLException {
+		String sql = "select*from tbl_baseinfo where cam_id=?";
+		PreparedStatement psmt = conn.prepareStatement(sql);
+		psmt.setInt(1, select_id);
+		ResultSet rs = psmt.executeQuery();
+		rs.next();
+		
+			String name = rs.getString("name");
+	        String region = rs.getString("region");	        
+	        String phone = rs.getString("phone");
+	        String address = rs.getString("address");
+	        String theme = rs.getString("theme");
+	        String data = rs.getString("data");
+	        
+	        DreamTreeInfo info = new DreamTreeInfo(name, region, address, phone, theme, data);
+	        
+	        
+	        rs.close();
+			psmt.close();
+			conn.close();
+	
+		
+		return info;
 	}
 }

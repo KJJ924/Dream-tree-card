@@ -2,7 +2,7 @@ package prj;
 
 import prj.action.DefaultAction;
 import prj.action.Search;
-
+import prj.action.SelectPointAction;
 import prj.action.SelectRegionAction;
 import prj.action.SelectThemeAction;
 
@@ -31,6 +31,9 @@ public class CommandFactory {
 			break;
 		case "SelectTheme":
 			action = new SelectThemeAction();
+			break;
+		case "SelectPoint":
+			action = new SelectPointAction();
 			break;
 		//Command가 기본 값일 경우
 		case "DefaultAction":

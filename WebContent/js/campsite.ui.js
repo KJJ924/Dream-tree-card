@@ -6,9 +6,11 @@ var rodeY;
  * @param feature
  */
 function FeatureInfoLoad (feature) {
+	console.log(feature.get('cam_id'));
     var postdata = {
-        'action': 'SelectCampsite',
+        'action': 'SelectPoint',
         'cam_id': feature.get('cam_id')
+      
     };
     $.ajax({
         url: "DreamTree.do",
@@ -20,17 +22,16 @@ function FeatureInfoLoad (feature) {
         $("#FeatureInfo").show();
     });
     
-    /*포인트 클릭시 해당 포인트 x y값  저장 */
+    /**포인트 클릭시 해당 포인트 x y값  저장 */
     var x = feature.values_.coord_lat;
     var y = feature.values_.coord_lon;
-    
     rodeX=x;
     rodeY=y;
     console.log(x);
     console.log(y);
     Storage();  
 }
-/*로드뷰에 쓸 x y 값  localStorage 에 저장 */
+/**로드뷰에 쓸 x y 값 사용자 localStorage 에 저장 */
 function Storage(){
 	localStorage.setItem('x',rodeX);
 	localStorage.setItem('y',rodeY);
@@ -42,7 +43,7 @@ function FeatureInfoWndClose() {
     $("#FeatureInfo td").text("-");
 }
 
-/*테마선택*/
+/**테마선택*/
 function selectTheme(themename){
 	var postdata={'action':'SelectTheme','theme':themename};
 	console.log(postdata)
@@ -67,7 +68,7 @@ function selectTheme(themename){
 	
 }
 
-/*지역선택*/
+/**지역선택*/
 function selectRegion(regionname){
 	var postdata={'action':'SelectRegion','region':regionname};
 	$.ajax({
@@ -163,7 +164,7 @@ function selectRegion(regionname){
 	   
 }
 
-/*검색*/
+/**검색*/
 function SearchSubmit()
 {
 	var x = document.getElementById("searchtitle").value;
@@ -190,7 +191,7 @@ function SearchSubmit()
 
 
 /**
- * geolocation 
+ * geolocation  컴퓨터 에서 사용 시 위치정보가 정확하지 않음 (오차범위 +-50m 이내)
  */
 function getLocation() {
 	  if (navigator.geolocation) {
